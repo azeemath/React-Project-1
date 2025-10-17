@@ -36,9 +36,9 @@ const SignupForm = ({ onClose }) => {
   return (
     <div>
 
-        <div className="fixed inset-0 flex items-center justify-center">
-         <div className="bg-white p-6 rounded-lg shadow-lg w-80">
-          <h2 className="text-xl font-semibold mb-4">Signup Form</h2>
+        <div className="fixed inset-0 flex items-center justify-center bg-black/30 backdrop-blur-sm">
+         <div className="bg-white p-6 rounded-lg shadow-lg w-80 ">
+          <h2 className="text-xl text-center font-semibold mb-4">Signup Form</h2>
           <form onSubmit={handleSubmit} className="space-y-4">
             <input
               type="text"
@@ -92,7 +92,10 @@ const SignupForm = ({ onClose }) => {
 
             <div className="flex justify-between">
                <button type="submit" className="bg-green-600 relative left-23 mt-8 text-white px-4 py-2 rounded">Signup</button>
-               <ImCancelCircle onClick={onClose} className="relative bottom-75" />
+               <ImCancelCircle 
+                   onClick={onClose} 
+                   size={22}
+                   className="relative  bottom-75 cursor-pointer text-red-500 hover:text-red-700" />
             </div>
           </form>
          </div>

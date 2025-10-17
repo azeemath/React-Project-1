@@ -2,13 +2,13 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { ImCancelCircle } from "react-icons/im";
 import { IoMenu } from "react-icons/io5";
-const Navbar = ({ onSignupClick }) => {
+const Navbar = ({ onSignupClick , onLoginClick }) => {
   const[ToMenu ,setIomenu] = useState(false)
 
   return (
     <nav className="flex items-center justify-between ">
 
-      <img src="./src/assets/1.png" className="w-30 h-30 relative right-5 bottom-4"  />
+      <img src="./src/assets/1.png"  className="w-30 h-30 relative right-2 bottom-1"  />
       <div className="hidden lg:block">
          <ul className="flex items-center relative bottom-5 gap-10 overflow-hidden border-0 shadow-sm rounded-4xl p-1">
  
@@ -31,11 +31,15 @@ const Navbar = ({ onSignupClick }) => {
               <li className="hover:bg-blue-600 p-2 pr-3 pl-3  rounded-3xl hover:text-white font-normal hover:text-md">
                 <Link to="/protection">Protection</Link>
              </li>
+
+             <li className="hover:bg-blue-600 p-2 pr-3 pl-3  rounded-3xl hover:text-white font-normal hover:text-md">
+                <Link to="/contact">Contact</Link>
+             </li>
          </ul>
       </div>
       <div className="hidden lg:block">
          <button type="button" className="hover:bg-black item-center hover:text-white font-bold m-1 p-2 pl-4 pr-4 
-              relative bottom-5 rounded-3xl hover:cursor-pointer">Login</button>
+              relative bottom-5 rounded-3xl hover:cursor-pointer" onClick={onLoginClick}>Login</button>
           <button type="button" className="hover:bg-black item-center hover:text-white font-bold m-1 p-2 pl-4 pr-4 
               relative bottom-5 rounded-3xl hover:cursor-pointer"
               onClick={onSignupClick}
@@ -48,9 +52,9 @@ const Navbar = ({ onSignupClick }) => {
          <IoMenu fontSize={27} onClick={()=> setIomenu(true)} className="relative bottom-5"/>
 
          {ToMenu && 
-             <div className="fixed inset-0 flex flex-col items-baseline-last">
-               <div className="bg-white p-6 rounded-lg shadow-lg w-70 h-100">
-                 <ImCancelCircle fontSize={27}  onClick={() => setIomenu(false)}/>
+             <div className="fixed inset-0 z-50 flex flex-col items-baseline-last">
+               <div className="bg-white p-6 rounded-lg shadow-lg w-70 h-120">
+                 <ImCancelCircle fontSize={27}  onClick={() => setIomenu(false)} className="text-gray-500 hover:text-gray-900"/>
                  <div>
                     <ul className="flex flex-col mt-8">
 
@@ -74,11 +78,15 @@ const Navbar = ({ onSignupClick }) => {
                            <Link to="/protection">Protection</Link>
                         </li>
 
+                        <li className="hover:bg-blue-600 rounded-full p-2 text-center hover:scale-115 transition-transform">
+                          <Link to="/contact">Contact</Link>
+                        </li>
+
                     </ul> 
                  </div>
                  <div className="flex flex-col mt-5">
                     <button type="button" className="hover:bg-black  hover:text-white font-bold m-1 p-2 pl-4 pr-4 
-                          rounded-3xl hover:cursor-pointer">Login</button>
+                          rounded-3xl hover:cursor-pointer" onClick={onLoginClick}>Login</button>
                      <button type="button" className="hover:bg-black item-center hover:text-white font-bold m-1 p-2 pl-4 pr-4 
                           rounded-3xl hover:cursor-pointer"
                          onClick={onSignupClick}
