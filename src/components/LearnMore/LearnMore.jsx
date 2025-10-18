@@ -2,7 +2,7 @@ import React from "react"
 
 const LearnMore = () => {
     return(
-        <div className=" m-25 mt-10">
+        <div className=" lg:m-25 m-5 mt-10">
                 <div>
                    <h1 className="text-3xl mb-5">What is Lorem Ipsum?</h1>
                    <p className="mb-5 text-base/7">
